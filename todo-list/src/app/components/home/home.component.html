@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div>
+  <input
+    [formControl]="taskTitle"
+    id="task-title"
+    placeholder="Título da tarefa"
+  />
+  <input
+    [formControl]="taskDetails"
+    id="task-details"
+    placeholder="Detalhes da tarefa"
+  />
+  <button (click)="addTask()" id="btn-store">Adicionar tarefa</button>
+</div>
+<div *ngFor="let task of tasks" id="task-list">
+  <h5 [class.text-success]="task.done">{{ task.title }}</h5>
+  <button *ngIf="!task.done" (click)="editTask(task)">Editar</button>
+  <button *ngIf="!task.done" (click)="removeTask(task)">Remover</button>
+  <label>Feito</label>
+  <input type="checkbox" (change)="toggleDone(task)" [checked]="task.done" />
+</div>
+<app-footer></app-footer>
