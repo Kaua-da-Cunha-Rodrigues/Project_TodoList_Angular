@@ -1,0 +1,20 @@
+<div class="d-flex flex-column justify-content-center">
+    <h6> <span id="horas">Hora</span>:<span id="minutos">Minutos</span></h6>
+    <div [ngSwitch]="today">
+      <h6>
+        <span *ngSwitchCase="0">Domingo</span>
+        <span *ngSwitchCase="1">Segundo-feira</span>
+        <span *ngSwitchCase="2">Terça-feira</span>
+        <span *ngSwitchCase="3">Quarta-feira</span>
+        <span *ngSwitchCase="4">Quinta-feira</span>
+        <span *ngSwitchCase="5">Sexta-feira</span>
+        <span *ngSwitchCase="6">Sábado</span>
+      </h6>
+    </div>
+  </div>
+  <h1 class="text-center">Todo List</h1>
+  <h6 class="text-center mb-2">
+    <span class="placeholder col-1 bg-secondary"></span>
+    Organize seu dia!
+    <span class="placeholder col-1 bg-secondary"></span>
+  </h6>
