@@ -1,23 +1,33 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormControl } from '@angular/forms';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 interface Task {
   title: string;
   details: string;
   done: boolean;
 }
-
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
-})
-
+  standalone: true,
+  imports: [
+    CommonModule, 
+    HeaderComponent, 
+    FooterComponent,
+    ReactiveFormsModule
+  ],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
+  })
+  
 export class HomeComponent {
-  taskTitle = new FormControl('');
+  taskTitle: FormControl = new FormControl();
   taskDetails = new FormControl('');
   tasks: Task[] = [];
-
+  
   addTask() {
     if (
       this.taskTitle.value?.trim() !== '' &&
@@ -35,7 +45,7 @@ export class HomeComponent {
       alert('Por favor, preencha todos os campos.');
     }
   }
-
+  
   editTask(task: Task) {
     const newTaskTitle = prompt('Editar título:', task.title);
     const newTaskDetails = prompt('Editar detalhes:', task.details);
@@ -44,14 +54,14 @@ export class HomeComponent {
       task.details = newTaskDetails;
     }
   }
-
+  
   removeTask(task: Task) {
     const index = this.tasks.indexOf(task);
     if (index > -1) {
       this.tasks.splice(index, 1);
     }
   }
-
+  
   toggleDone(task: Task) {
     task.done = !task.done;
   }
