@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl } from '@angular/forms';
 import { HeaderComponent } from '../header/header.component';
@@ -11,21 +11,22 @@ interface Task {
   done: boolean;
 }
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    CommonModule, 
-    HeaderComponent, 
-    FooterComponent,
-    ReactiveFormsModule
-  ],
+    selector: 'app-home',  
     templateUrl: './home.component.html',
-    styleUrl: './home.component.scss'
+    styleUrl: './home.component.scss',
+    standalone: true,
+    imports: [
+      CommonModule, 
+      ReactiveFormsModule,
+      HeaderComponent,
+      FooterComponent
+    ]
   })
   
-export class HomeComponent {
+export class HomeComponent  {
+
+  taskDetails: FormControl = new FormControl();
   taskTitle: FormControl = new FormControl();
-  taskDetails = new FormControl('');
   tasks: Task[] = [];
   
   addTask() {
