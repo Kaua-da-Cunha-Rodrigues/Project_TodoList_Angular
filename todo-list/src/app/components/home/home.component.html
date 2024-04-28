@@ -1,11 +1,15 @@
+<body class="pt-5 bg-dark text-white"></body>
 <app-header></app-header>
 <div>
-  <input [formControl]="taskTitle" id="task-title" placeholder="Título da tarefa"
+  <input
+    [formControl]="taskTitle"
+    id="task-title"
+    placeholder="Tarefa"
   />
   <input
     [formControl]="taskDetails"
     id="task-details"
-    placeholder="Detalhes da tarefa"
+    placeholder="Detalhes"
   />
   <button (click)="addTask()" id="btn-store">Adicionar tarefa</button>
 </div>
@@ -17,4 +21,3 @@
   <input type="checkbox" (change)="toggleDone(task)" [checked]="task.done" />
 </div>
 <app-footer></app-footer>
-
