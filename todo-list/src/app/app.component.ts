@@ -16,5 +16,5 @@ import { HomeComponent } from './components/home/home.component';
 })
 
 export class AppComponent {
-  title = 'todo-list';
+  title = 'todo-list';  
 }
