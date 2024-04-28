@@ -1,23 +1,26 @@
-<body class="pt-5 bg-dark text-white"></body>
-<app-header></app-header>
-<div>
-  <input
+<section class="pt-5 bg-dark text-white">
+  <app-header></app-header>
+  <div class="text-center">
+    <input
     [formControl]="taskTitle"
     id="task-title"
     placeholder="Tarefa"
-  />
-  <input
+    />
+    <input
+    class="mx-1"
     [formControl]="taskDetails"
     id="task-details"
     placeholder="Detalhes"
-  />
-  <button (click)="addTask()" id="btn-store">Adicionar tarefa</button>
-</div>
-<div *ngFor="let task of tasks" id="task-list">
-  <h5 [class.text-success]="task.done">{{ task.title }}</h5>
-  <button *ngIf="!task.done" (click)="editTask(task)">Editar</button>
-  <button *ngIf="!task.done" (click)="removeTask(task)">Remover</button>
-  <label>Feito</label>
-  <input type="checkbox" (change)="toggleDone(task)" [checked]="task.done" />
-</div>
-<app-footer></app-footer>
+    />
+    <button (click)="addTask()" id="btn-store">Adicionar tarefa</button>
+  </div>
+  <div *ngFor="let task of tasks" id="task-list">
+    <h3 [class.text-success]="task.done">{{ task.title }}</h3>
+    <p [class.text-success]="task.done">{{ task.details }}</p>                         
+    <button *ngIf="!task.done" (click)="editTask(task)">Editar</button>
+    <button *ngIf="!task.done" (click)="removeTask(task)">Remover</button>
+    <label>Feito</label>
+    <input type="checkbox" (change)="toggleDone(task)" [checked]="task.done" />
+  </div>
+  <app-footer></app-footer>
+</section>

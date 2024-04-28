@@ -25,8 +25,8 @@ interface Task {
   
 export class HomeComponent  {
 
-  taskDetails: FormControl = new FormControl();
   taskTitle: FormControl = new FormControl();
+  taskDetails: FormControl = new FormControl();
   tasks: Task[] = [];
   
   addTask() {
