@@ -1,11 +1,11 @@
-<header>
+<header class="container">
   <title>{{ title }}</title>
-  <div class="d-flex flex-column justify-content-center">
-    <h6> <span id="horas">Hora</span>:<span id="minutos">Minutos</span></h6>
+  <div class="d-flex justify-content-between mb-3">
+    <h6> <span id="horas" class="text-danger">Hora</span><span class="text-danger">:</span><span id="minutos" class="text-danger">Minutos</span></h6>
     <div [ngSwitch]="today">
-      <h6>
+      <h6 class="text-success">
         <span *ngSwitchCase="0">Domingo</span>
-        <span *ngSwitchCase="1">Segundo-feira</span>
+        <span *ngSwitchCase="1">Segunda-feira</span>
         <span *ngSwitchCase="2">Terça-feira</span>
         <span *ngSwitchCase="3">Quarta-feira</span>
         <span *ngSwitchCase="4">Quinta-feira</span>
@@ -14,9 +14,13 @@
       </h6>
     </div>
   </div>
-
-  <h1 class="text-center">Todo List</h1>
+  
+  <h1 class="text-center text-warning mb-3">Todo List</h1>
   <h6 class="text-center mb-2">
-    <span class="placeholder col-1 bg-secondary">Organize seu dia!</span>
+    <span class="placeholder col-1 bg-danger"></span>
+    <span class="text-warning">
+      Organize seu dia!
+    </span>
+    <span class="placeholder col-1 bg-success"></span>
   </h6>
 </header>
