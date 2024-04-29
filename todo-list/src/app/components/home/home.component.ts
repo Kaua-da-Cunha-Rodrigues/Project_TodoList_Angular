@@ -46,6 +46,14 @@ export class HomeComponent  {
       alert('Por favor, preencha todos os campos.');
     }
   }
+
+  // clearTask() {
+  //  const input1 = document.getElementById("task-title") as HTMLElement;
+  //  const input2 = document.getElementById("task-details") as HTMLElement;
+
+  //  input1.innerText = '';
+  //  input2.innerText = '';
+  // }
   
   editTask(task: Task) {
     const newTaskTitle = prompt('Editar título:', task.title);
