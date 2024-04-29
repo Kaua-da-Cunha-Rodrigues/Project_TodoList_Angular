@@ -13,8 +13,15 @@
 body {
   margin-top: 50px;
   word-wrap: break-word;
+  background-color: black;
+  color: white;
 }
 
 #taks-list {
   width: 80%;
+}
+
+button,
+label {
+  border-radius: 5px;
 }
