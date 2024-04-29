@@ -1,0 +1,8 @@
+input {
+  color: white;
+  padding: 3px;
+}
+
+.box {
+  min-width: 200px;
+}
