@@ -1,8 +1,7 @@
 <header class="container">
   <title>{{ title }}</title>
   <div class="d-flex justify-content-between mb-3">
-    <h6> <span id="horas" class="text-danger">Hora</span><span class="text-danger">:</span><span id="minutos" class="text-danger">Minutos</span></h6>
-    <div [ngSwitch]="today">
+    <h6> <span id="horas" class="text-danger"></span><span class="text-danger">:</span><span id="minutos" class="text-danger"></span></h6>    <div [ngSwitch]="today">
       <h6 class="text-success">
         <span *ngSwitchCase="0">Domingo</span>
         <span *ngSwitchCase="1">Segunda-feira</span>
